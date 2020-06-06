@@ -15,6 +15,8 @@
 		BB83863E248B8940002165AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83863D248B8940002165AA /* main.m */; };
 		BB838648248B8940002165AA /* FaceDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB838647248B8940002165AA /* FaceDetectorTests.m */; };
 		BB838653248B8940002165AA /* FaceDetectorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB838652248B8940002165AA /* FaceDetectorUITests.m */; };
+		BB838668248C0960002165AA /* SquareBox.m in Sources */ = {isa = PBXBuildFile; fileRef = BB838667248C0960002165AA /* SquareBox.m */; };
+		BB83866C248C0C19002165AA /* UIImageView+ReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83866B248C0C19002165AA /* UIImageView+ReSize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,11 @@
 		BB83864E248B8940002165AA /* FaceDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB838652248B8940002165AA /* FaceDetectorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceDetectorUITests.m; sourceTree = "<group>"; };
 		BB838654248B8940002165AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB838664248C018B002165AA /* FaceDetector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceDetector-Prefix.pch"; sourceTree = "<group>"; };
+		BB838666248C0960002165AA /* SquareBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SquareBox.h; sourceTree = "<group>"; };
+		BB838667248C0960002165AA /* SquareBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquareBox.m; sourceTree = "<group>"; };
+		BB83866A248C0C19002165AA /* UIImageView+ReSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReSize.h"; sourceTree = "<group>"; };
+		BB83866B248C0C19002165AA /* UIImageView+ReSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ReSize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,8 @@
 		BB83862D248B893E002165AA /* FaceDetector */ = {
 			isa = PBXGroup;
 			children = (
+				BB838669248C0BE5002165AA /* Category */,
+				BB838665248C090A002165AA /* UtilityObject */,
 				BB83862E248B893E002165AA /* AppDelegate.h */,
 				BB83862F248B893E002165AA /* AppDelegate.m */,
 				BB838631248B893E002165AA /* ViewController.h */,
@@ -110,6 +119,7 @@
 				BB838639248B8940002165AA /* LaunchScreen.storyboard */,
 				BB83863C248B8940002165AA /* Info.plist */,
 				BB83863D248B8940002165AA /* main.m */,
+				BB838664248C018B002165AA /* FaceDetector-Prefix.pch */,
 			);
 			path = FaceDetector;
 			sourceTree = "<group>";
@@ -130,6 +140,24 @@
 				BB838654248B8940002165AA /* Info.plist */,
 			);
 			path = FaceDetectorUITests;
+			sourceTree = "<group>";
+		};
+		BB838665248C090A002165AA /* UtilityObject */ = {
+			isa = PBXGroup;
+			children = (
+				BB838666248C0960002165AA /* SquareBox.h */,
+				BB838667248C0960002165AA /* SquareBox.m */,
+			);
+			path = UtilityObject;
+			sourceTree = "<group>";
+		};
+		BB838669248C0BE5002165AA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BB83866A248C0C19002165AA /* UIImageView+ReSize.h */,
+				BB83866B248C0C19002165AA /* UIImageView+ReSize.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB838668248C0960002165AA /* SquareBox.m in Sources */,
+				BB83866C248C0C19002165AA /* UIImageView+ReSize.m in Sources */,
 				BB838633248B893E002165AA /* ViewController.m in Sources */,
 				BB83863E248B8940002165AA /* main.m in Sources */,
 				BB838630248B893E002165AA /* AppDelegate.m in Sources */,
@@ -437,6 +467,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2499D8WGX;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceDetector/FaceDetector-Prefix.pch";
 				INFOPLIST_FILE = FaceDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +486,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2499D8WGX;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceDetector/FaceDetector-Prefix.pch";
 				INFOPLIST_FILE = FaceDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

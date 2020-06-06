@@ -1,0 +1,18 @@
+//
+//  FaceDetector-Prefix.pch
+//  FaceDetector
+//
+//  Created by iverson1234tw on 2020/6/7.
+//  Copyright © 2020 josh.chen. All rights reserved.
+//
+
+#ifndef FaceDetector_Prefix_pch
+#define FaceDetector_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define SCREEN_WIDTH          [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT         [UIScreen mainScreen].bounds.size.height
+
+#endif /* FaceDetector_Prefix_pch */
