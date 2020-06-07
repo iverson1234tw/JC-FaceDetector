@@ -6,18 +6,21 @@
 //  Copyright © 2020 josh.chen. All rights reserved.
 //
 
-#import "SquareBox.h"
 #import "ViewController.h"
-#import "UIImageView+ReSize.h"
-#import <AVFoundation/AVFoundation.h>
+#import "SingleFaceViewController.h"
+#import "GroupFaceViewController.h"
+#import "PhonePhotoViewController.h"
 
-@import CoreML;
-@import Vision;
+@import Photos;
 
-@interface ViewController () {
-    UIImage *photo;
-}
-@property (strong, nonatomic) UIImageView *photoImageView;
+#define CellLabel @[@"SinglePhotoDetect", @"GroupPhotoDetect", @"PhonePhotoDetect"]
+
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property(nonatomic , strong) PHFetchResult *assetsFetchResults;
+@property(nonatomic , strong) PHCachingImageManager *imageManager;
 
 @end
 
@@ -27,67 +30,75 @@
     
     [super viewDidLoad];
     
-    _photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, _topView.frame.origin.y + _topView.frame.size.height, SCREEN_WIDTH, SCREEN_HEIGHT - _topView.frame.size.height) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.tableFooterView = [UIView new];
     
-    photo = [UIImage imageNamed:@"me"];
-    
-    _photoImageView.contentMode = UIViewContentModeScaleAspectFit;
-    
-    _photoImageView.image = photo;
-    
-    [self faceDetector:photo];
-    
-    [self.view addSubview:_photoImageView];
+    [self.view addSubview:_tableView];
     
 }
 
-// 偵測臉部位置
-- (void)faceDetector:(UIImage *)image {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    // 轉換為CIImage
-    CIImage *convertImage = [[CIImage alloc] initWithImage:image];
-    
-    // 取得Image的Rect
-    CGRect imageRect = AVMakeRectWithAspectRatioInsideRect(self->_photoImageView.image.size, self->_photoImageView.bounds);
-    
-    // 重置Imageview的位置及大小
-    [_photoImageView resizeFrameByImage:imageRect];
-    
-    VNImageRequestHandler *detectRequestHandler = [[VNImageRequestHandler alloc] initWithCIImage:convertImage options:@{}];
-    
-    VNRequestCompletionHandler completionHandler = ^(VNRequest *request, NSError *error) {
-        
-        NSArray *observations = request.results;
-        
-        for (VNFaceObservation *observation  in observations) {
-            
-            CGRect facePointRect = [self convertRect:observation.boundingBox imageSize:imageRect.size];
-            
-            // 添加臉部框位置
-            SquareBox *box = [[SquareBox alloc] initWithFrame:facePointRect];
-            
-            [self->_photoImageView addSubview:box];
-            
-        }
-        
-    };
-    
-    VNDetectFaceRectanglesRequest *detectRequest = [[VNDetectFaceRectanglesRequest alloc] initWithCompletionHandler:completionHandler];
-    
-    [detectRequestHandler performRequests:@[detectRequest] error:nil];
-    
+    return 1;
 }
 
-// 轉換座標
-- (CGRect)convertRect:(CGRect)oldRect imageSize:(CGSize)imageSize{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    CGFloat w = oldRect.size.width * imageSize.width;
-    CGFloat h = oldRect.size.height * imageSize.height;
-    CGFloat x = oldRect.origin.x * imageSize.width;
-    CGFloat y = imageSize.height - (oldRect.origin.y * imageSize.height) - h;
-    
-    return CGRectMake(x, y, w, h);
+    return [CellLabel count];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+        
+    }
+    
+    cell.textLabel.text = CellLabel[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if (indexPath.row == 0) {
+        
+        SingleFaceViewController *single = [[SingleFaceViewController alloc] init];
+        
+        [self presentViewController:single animated:YES completion:nil];
+        
+    } else if (indexPath.row == 1) {
+        
+        GroupFaceViewController *group = (GroupFaceViewController *)[[UIStoryboard storyboardWithName:
+                                                                      @"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GroupFaceViewController"];
+        
+        [self presentViewController:group animated:YES completion:nil];
+        
+    } else {
+        
+        PHFetchOptions *options = [[PHFetchOptions alloc] init];
+        options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+        
+        _assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];        
+        
+        PhonePhotoViewController *phone = (PhonePhotoViewController *)[[UIStoryboard storyboardWithName:
+                                                                       @"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PhonePhotoViewController"];
+        
+        phone.assetsFetchResults = _assetsFetchResults;
+        
+        [self presentViewController:phone animated:YES completion:nil];
+        
+    }
+    
+}
 
 @end

@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B07C9DE63BEFACEBBCCF489A /* libPods-FaceDetector.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1C03AB2204FB61845B5249 /* libPods-FaceDetector.a */; };
+		BB19D12C248D20AC00BCE408 /* SingleFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB19D12B248D20AC00BCE408 /* SingleFaceViewController.m */; };
+		BB19D12F248D2E9A00BCE408 /* GroupFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB19D12E248D2E9A00BCE408 /* GroupFaceViewController.m */; };
+		BB19D133248D4B5100BCE408 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB19D132248D4B5100BCE408 /* PhotoCell.m */; };
+		BB19D136248D5D5100BCE408 /* PhonePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB19D135248D5D5100BCE408 /* PhonePhotoViewController.m */; };
 		BB838630248B893E002165AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB83862F248B893E002165AA /* AppDelegate.m */; };
 		BB838633248B893E002165AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB838632248B893E002165AA /* ViewController.m */; };
 		BB838636248B893E002165AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB838634248B893E002165AA /* Main.storyboard */; };
@@ -37,6 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E1C03AB2204FB61845B5249 /* libPods-FaceDetector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FaceDetector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E2B55E927AF9757817DDEEF /* Pods-FaceDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetector.release.xcconfig"; path = "Target Support Files/Pods-FaceDetector/Pods-FaceDetector.release.xcconfig"; sourceTree = "<group>"; };
+		BB19D12A248D20AC00BCE408 /* SingleFaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleFaceViewController.h; sourceTree = "<group>"; };
+		BB19D12B248D20AC00BCE408 /* SingleFaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleFaceViewController.m; sourceTree = "<group>"; };
+		BB19D12D248D2E9A00BCE408 /* GroupFaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupFaceViewController.h; sourceTree = "<group>"; };
+		BB19D12E248D2E9A00BCE408 /* GroupFaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupFaceViewController.m; sourceTree = "<group>"; };
+		BB19D131248D4B5100BCE408 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		BB19D132248D4B5100BCE408 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		BB19D134248D5D5100BCE408 /* PhonePhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhonePhotoViewController.h; sourceTree = "<group>"; };
+		BB19D135248D5D5100BCE408 /* PhonePhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhonePhotoViewController.m; sourceTree = "<group>"; };
 		BB83862B248B893E002165AA /* FaceDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB83862E248B893E002165AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB83862F248B893E002165AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +73,7 @@
 		BB838667248C0960002165AA /* SquareBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquareBox.m; sourceTree = "<group>"; };
 		BB83866A248C0C19002165AA /* UIImageView+ReSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ReSize.h"; sourceTree = "<group>"; };
 		BB83866B248C0C19002165AA /* UIImageView+ReSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ReSize.m"; sourceTree = "<group>"; };
+		BEE6FDAC27AE3EA882E5B2ED /* Pods-FaceDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetector.debug.xcconfig"; path = "Target Support Files/Pods-FaceDetector/Pods-FaceDetector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07C9DE63BEFACEBBCCF489A /* libPods-FaceDetector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424F06E833621AB0CBFF23F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEE6FDAC27AE3EA882E5B2ED /* Pods-FaceDetector.debug.xcconfig */,
+				3E2B55E927AF9757817DDEEF /* Pods-FaceDetector.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		99D1EE48BCC11D5B9661CB74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E1C03AB2204FB61845B5249 /* libPods-FaceDetector.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB838622248B893E002165AA = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +126,8 @@
 				BB838646248B8940002165AA /* FaceDetectorTests */,
 				BB838651248B8940002165AA /* FaceDetectorUITests */,
 				BB83862C248B893E002165AA /* Products */,
+				424F06E833621AB0CBFF23F6 /* Pods */,
+				99D1EE48BCC11D5B9661CB74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,11 +145,19 @@
 			isa = PBXGroup;
 			children = (
 				BB838669248C0BE5002165AA /* Category */,
-				BB838665248C090A002165AA /* UtilityObject */,
+				BB838665248C090A002165AA /* DetectorTool */,
 				BB83862E248B893E002165AA /* AppDelegate.h */,
 				BB83862F248B893E002165AA /* AppDelegate.m */,
 				BB838631248B893E002165AA /* ViewController.h */,
 				BB838632248B893E002165AA /* ViewController.m */,
+				BB19D12A248D20AC00BCE408 /* SingleFaceViewController.h */,
+				BB19D12B248D20AC00BCE408 /* SingleFaceViewController.m */,
+				BB19D12D248D2E9A00BCE408 /* GroupFaceViewController.h */,
+				BB19D12E248D2E9A00BCE408 /* GroupFaceViewController.m */,
+				BB19D134248D5D5100BCE408 /* PhonePhotoViewController.h */,
+				BB19D135248D5D5100BCE408 /* PhonePhotoViewController.m */,
+				BB19D131248D4B5100BCE408 /* PhotoCell.h */,
+				BB19D132248D4B5100BCE408 /* PhotoCell.m */,
 				BB838634248B893E002165AA /* Main.storyboard */,
 				BB838637248B8940002165AA /* Assets.xcassets */,
 				BB838639248B8940002165AA /* LaunchScreen.storyboard */,
@@ -142,13 +186,13 @@
 			path = FaceDetectorUITests;
 			sourceTree = "<group>";
 		};
-		BB838665248C090A002165AA /* UtilityObject */ = {
+		BB838665248C090A002165AA /* DetectorTool */ = {
 			isa = PBXGroup;
 			children = (
 				BB838666248C0960002165AA /* SquareBox.h */,
 				BB838667248C0960002165AA /* SquareBox.m */,
 			);
-			path = UtilityObject;
+			path = DetectorTool;
 			sourceTree = "<group>";
 		};
 		BB838669248C0BE5002165AA /* Category */ = {
@@ -167,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB838657248B8940002165AA /* Build configuration list for PBXNativeTarget "FaceDetector" */;
 			buildPhases = (
+				3598676D30A6E3AFF6E89D0F /* [CP] Check Pods Manifest.lock */,
 				BB838627248B893E002165AA /* Sources */,
 				BB838628248B893E002165AA /* Frameworks */,
 				BB838629248B893E002165AA /* Resources */,
+				C68551C30BCB0C8A15CC11CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,15 +331,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3598676D30A6E3AFF6E89D0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FaceDetector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68551C30BCB0C8A15CC11CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FaceDetector/Pods-FaceDetector-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FaceDetector/Pods-FaceDetector-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FaceDetector/Pods-FaceDetector-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB838627248B893E002165AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB19D133248D4B5100BCE408 /* PhotoCell.m in Sources */,
+				BB19D12F248D2E9A00BCE408 /* GroupFaceViewController.m in Sources */,
 				BB838668248C0960002165AA /* SquareBox.m in Sources */,
+				BB19D12C248D20AC00BCE408 /* SingleFaceViewController.m in Sources */,
 				BB83866C248C0C19002165AA /* UIImageView+ReSize.m in Sources */,
 				BB838633248B893E002165AA /* ViewController.m in Sources */,
 				BB83863E248B8940002165AA /* main.m in Sources */,
+				BB19D136248D5D5100BCE408 /* PhonePhotoViewController.m in Sources */,
 				BB838630248B893E002165AA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +555,7 @@
 		};
 		BB838658248B8940002165AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE6FDAC27AE3EA882E5B2ED /* Pods-FaceDetector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +575,7 @@
 		};
 		BB838659248B8940002165AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E2B55E927AF9757817DDEEF /* Pods-FaceDetector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
